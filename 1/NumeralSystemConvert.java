@@ -9,23 +9,33 @@ public class NumeralSystemConvert {
         int number = Integer.parseInt(input);
         out.println("Input numeral system to be converted to:");
         int toBase = Integer.parseInt(scanner.nextLine());
+        scanner.close();
+        String result = "";
         
         if (toBase < 10) {
-            String res = "";
+            String reverse = "";
             while (number > 0) {
-                res += number % toBase;
+                reverse += number % toBase;
                 number /= toBase;
             }
             
-            char[] resChar = res.toCharArray();
-            for (int i = res.length() - 1; i >= 0; i--) {
-                out.print(resChar[i]);
+            char[] resChar = reverse.toCharArray();
+
+            for (int i = reverse.length() - 1; i >= 0; i--) {
+                result += resChar[i];
             }
+
+            out.println(result);
         } else {
-            out.println("Base shuld be < 10");
+            out.println("Base should be < 10");
         }
 
-        out.println("\nChecking: ");
-        out.println(Integer.toString(Integer.parseInt(input, 10), toBase));
+        out.print("\nChecking: ");
+        String check = Integer.toString(Integer.parseInt(input, 10), toBase);
+        if (check.equals(result)) {
+            out.println("Match.");
+        } else {
+            out.println("No Match! The correct number is " + check);
+        }
     }
 }
