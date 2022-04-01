@@ -30,10 +30,11 @@ public class Numbers {
         out.println(numSix + "\n" + numSeven + "\n" + numEight + "\n" + numNine + "\n" + numTen);
 
         //3
-        double num = 18_398_458_438_583_853.39875937284928422;
-        double num1 = 1_839_845_876_675.398759372;
-        BigDecimal bigDecimal = new BigDecimal(num);
-        out.println(bigDecimal);
+        double num = 18_398_458_438_583_853.398_759_372_849_284_22;
+        double num1 = 1_839_845_876_675.398_759_372;
+        String num3 = "18398458438583853000000123456789.132456789000000039875937284928422";
+        BigDecimal bigPostive = new BigDecimal(num3);
+        out.println(bigPostive);
         out.println(String.format("%.17f", num));
         out.println(String.format("%.9f", num1));
     }
