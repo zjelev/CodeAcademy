@@ -32,7 +32,8 @@ public class Numbers {
         //3
         double num = 18_398_458_438_583_853.39875937284928422;
         double num1 = 1_839_845_876_675.398759372;
-        out.println(num1);
+        BigDecimal bigDecimal = new BigDecimal(num);
+        out.println(bigDecimal);
         out.println(String.format("%.17f", num));
         out.println(String.format("%.9f", num1));
     }
