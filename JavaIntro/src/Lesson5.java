@@ -38,13 +38,23 @@ public class Lesson5 {
         // 1
         System.out.printf("%.5f", Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2)));
         // 2
-        Scanner scanner = new Scanner(System.in); 
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Input month: ");
         int month = scanner.nextInt();
+        System.out.println("Input day: ");
         int day = scanner.nextInt();
-        // boolean isSpring = (month == 3 && day >= 20 && day <= 31) || (month == 4 && day <= 30) || 
-        //     (month == 5 && day <= 31) || (month == 6 && day <= 20);
+        boolean isSpring = (month == 3 && day >= 20 && day <= 31) || (month == 4 && day <= 30) || 
+            (month == 5 && day <= 31) || (month == 6 && day <= 20);
 
-        boolean isSpring = month >= 3 && day >= 20 || month <= 6 && day <=20; // 1 1 yes??
+        // boolean isSpring = month >= 3 && day >= 20 || month <= 6 && day <=20; // 1 1 yes??
         System.out.println(isSpring ? "yes" : "no");
+
+        // 3
+        System.out.println("Input mass in kg: ");
+        double mass = scanner.nextDouble();
+        System.out.println("Input height in m: ");
+        double height = scanner.nextDouble();
+        double bmi = mass / (height * height);
+        System.out.println("My Body Mass index is " + bmi);
     }
 }
