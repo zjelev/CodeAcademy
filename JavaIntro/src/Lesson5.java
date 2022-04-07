@@ -46,8 +46,9 @@ public class Lesson5 {
         boolean isSpring = (month == 3 && day >= 20 && day <= 31) || (month == 4 && day <= 30) || 
             (month == 5 && day <= 31) || (month == 6 && day <= 20);
 
-        // boolean isSpring = month >= 3 && day >= 20 || month <= 6 && day <=20; // 1 1 yes??
+        String springSeason = month >= 3 && day >= 20 || month <= 6 && day <=20 ? "yes" : "no"; // 1 1 yes??
         System.out.println(isSpring ? "yes" : "no");
+        System.out.println(springSeason);
 
         // 3
         System.out.println("Input mass in kg: ");
