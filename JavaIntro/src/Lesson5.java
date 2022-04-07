@@ -56,6 +56,6 @@ public class Lesson5 {
         System.out.println("Input height in m: ");
         double height = scanner.nextDouble();
         double bmi = mass / (height * height);
-        System.out.println("My Body Mass index is " + bmi);
+        System.out.println(bmi > 18.5 && bmi <=25 ? "My Body Mass index is in range" : "My Body Mass index is out of range");
     }
 }
