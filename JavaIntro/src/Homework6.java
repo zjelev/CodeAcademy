@@ -6,11 +6,11 @@ public class Homework6 {
         
         // 1
         double num1 = scanner.nextDouble();
-        System.out.printf("%.5f\n", Math.sqrt(num1));
+        System.out.printf("The result is: %.5f\n", Math.sqrt(num1));
 
         // 2 
         int num2 = scanner.nextInt();
-        System.out.println(num2 % 2 == 0 ? "even" : "odd");
+        System.out.println("The result is: ".concat(num2 % 2 == 0 ? "even" : "odd"));
 
         // 3
         System.out.printf("|%-16s|%4d|\n", "Ivancho", 2);
