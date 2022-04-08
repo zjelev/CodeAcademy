@@ -10,15 +10,27 @@ public class Homework7 {
         System.out.println("Input day: ");
         int day = scanner.nextInt();
         boolean isSpring = false;
+        boolean isCorrect = true;
 
-        if (month > 0 && day > 0 && month <= 12 & day <= 31) {
-        if ((month == 3 && day >= 20 && day <= 31) || (month == 4 && day <= 30) ||
-        (month == 5 && day <= 31) || (month == 6 && day <= 20)) {
-        isSpring = true;
+        if ((month <= 0 || day <= 0 || month > 12 || day > 31)) {
+            isCorrect = false;
         }
-        System.out.println(isSpring);
+
+        if (((month == 4 || month == 6 || month == 9 || month == 11) && day > 30) || (month == 2 && day >= 30)) {
+            isCorrect = false;
+        }
+
+        if (isCorrect) {
+            if (month == 3 && day >= 20) {
+                isSpring = true;
+            } else if ((month == 4 && day <= 30 ) || month == 5) {
+                isSpring = true;
+            } else if (month == 6 && day <= 20) {
+                isSpring = true;
+            } 
+            System.out.println(isSpring);
         } else {
-        System.out.println("Incorrect input!");
+            System.out.println("Incorrect input!");
         }
 
         // 2
