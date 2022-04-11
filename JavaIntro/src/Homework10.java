@@ -9,8 +9,8 @@ public class Homework10 {
         switch (taskNum) {
             case 1:
                 System.out.print("Input integer: ");
-                int sum = 0;
                 int input = 0;
+                int sum = 0;
                 do {
                     input = scan.nextInt();
                     if (input > 0 && input <= 100) {
@@ -21,8 +21,11 @@ public class Homework10 {
                 break;
 
             case 2:
-                System.out.print("Input integer: ");
-                int num = scan.nextInt();
+                int num = -1;
+                while (num < 0) {
+                    System.out.print("Input non-negative integer: ");
+                    num = scan.nextInt();
+                }
                 System.out.print("Factoriel of " + num);
 
                 int factoriel = 1;
@@ -41,7 +44,6 @@ public class Homework10 {
                     }
                     System.out.println();
                 }
-
                 break;
 
             case 4:
