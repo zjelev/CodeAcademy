@@ -119,6 +119,7 @@ public class Lesson11 {
                     exponent /= 10;
                 }
                 System.out.println(reverse);
+                System.out.println(new StringBuffer(String.valueOf(reverse)).reverse());
                 break;
 
             case 7:
