@@ -13,39 +13,49 @@ public class Functions {
         // String input = System.console().readLine();
         // System.out.println(countVowels(input));
 
-        // 1
-        // String somethingInTheWay = couplet() + chorus() + couplet() + chorus();
-        // System.out.printf(somethingInTheWay);
+        System.out.print("Which task would you like to run? ");
+        int taskNum = scan.nextInt();
 
-        // 2
-        // String theMiddle = theMiddle(scan.next());
-        // System.out.println(theMiddle);
+        switch (taskNum) {
+            case 1:
+                String somethingInTheWay = couplet1() + chorus() + couplet2() + chorus();
+                System.out.printf(somethingInTheWay);
+                break;
 
-        // 4
-        System.out.print("Input shape: ");
-        String input = scan.next();
+            case 2:
+                String theMiddle = theMiddle(scan.next());
+                System.out.println(theMiddle);
+                break;
 
-        if (input.equalsIgnoreCase("circle")) {
-            System.out.print("Input radius: ");
-            double r = scan.nextDouble();
-            if (r > 0) {
-                System.out.print("The area of the circle is " + area(r));
-            } else {
-                System.out.println("In our Universe, radius can not be negative.");
-            }
-        } else {
-            System.out.print("Input side: ");
-            double a = scan.nextDouble();
-            System.out.print("Input height: ");
-            double h = scan.nextDouble();
+            case 4:
+                System.out.print("Input shape: ");
+                String input = scan.next();
 
-            if (input.equalsIgnoreCase("triangle")) {
-                System.out.println("The area of the triangle is " + area("triangle", a, h));
-            } else if (input.equalsIgnoreCase("rectangle")) {
-                System.out.println("The area of the rectangle is " + area("rectangle", a, h));
-            } else {
-                System.out.println("Unknown figure!");
-            }
+                if (input.equalsIgnoreCase("circle")) {
+                    System.out.print("Input radius: ");
+                    double r = scan.nextDouble();
+                    if (r > 0) {
+                        System.out.print("The area of the circle is " + area(r));
+                    } else {
+                        System.out.println("In our Universe, radius can not be negative.");
+                    }
+                } else {
+                    System.out.print("Input side: ");
+                    double a = scan.nextDouble();
+                    System.out.print("Input height: ");
+                    double h = scan.nextDouble();
+
+                    if (input.equalsIgnoreCase("triangle")) {
+                        System.out.println("The area of the triangle is " + area("triangle", a, h));
+                    } else if (input.equalsIgnoreCase("rectangle")) {
+                        System.out.println("The area of the rectangle is " + area("rectangle", a, h));
+                    } else {
+                        System.out.println("Unknown figure!");
+                    }
+                }
+                break;
+            default:
+                break;
         }
     }
 
@@ -65,19 +75,37 @@ public class Functions {
     // return "The above sentence contains " + vowelsNum + " vowels";
     // }
 
-    static String couplet() {
-        String couplet = "%nUnderneath the bridge%n" +
-                "Tarp has sprung a leak%n" +
-                "And the animals I've trapped%n" +
-                "Have all become my pets%n" +
-                "And I'm living off of grass%n" +
-                "And the drippings from my ceiling%n" +
-                "It's okay to eat fish%n" +
-                "Cause they don't have any feelings%n";
+    static String couplet1() {
+        String couplet = 
+        "%nI've nothing much to offer%n" +
+        "There's nothing much to take%n" +
+        "I'm an absolute beginner%n" +
+        "But I'm absolutely sane%n" +
+        "As long as we're together%n" +
+        "The rest can go to hell%n" +
+        "I absolutely love you%n" +
+        "But we're absolute beginners%n" +
+        "With eyes completely open%n" +
+        "But nervous all the same%n";
         return couplet;
     }
 
-    static String chorus() {
+    static String couplet2() {
+        String couplet = 
+        "%nNothing much could happen%n" +
+        "Nothing we can't shake%n" +
+        "Oh, we're absolute beginners%n" +
+        "With nothing much at stake%n" +
+        "As long as you're still smiling%n" +
+        "There's nothing more I need%n" +
+        "I absolutely love you%n" +
+        "But we're absolute beginners%n" +
+        "But if my love is your love%n" +
+        "We're certain to succeed%n";
+        return couplet;
+    }
+
+    static String chorus1() {
         String output = "";
         String secondLine = "%nMmm-mmm";
         for (int i = 0; i < 6; i++) {
@@ -89,6 +117,18 @@ public class Functions {
             output += secondLine;
         }
         return output + "%n";
+    }
+
+    static String chorus() {
+        return
+        "%nIf our love song%n" +
+        "Could fly over mountains%n" +
+        "Could laugh at the ocean%n" +
+        "Just like the films%n" +
+        "There's no reason%n" +
+        "To feel all the hard times%n" +
+        "To lay down the hard lines%n" +
+        "It's absolutely true%n"''
     }
 
     static String theMiddle(String input) {
