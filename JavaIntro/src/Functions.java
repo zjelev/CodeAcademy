@@ -1,25 +1,18 @@
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Functions {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-
-        // System.out.println("Input two numbers: ");
-        // double num1 = scan.nextDouble();
-        // double num2 = scan.nextDouble();
-        // System.out.println("The average is " + average(num1, num2));
-
-        // System.out.println("Input a sentence: ");
-        // String input = System.console().readLine();
-        // System.out.println(countVowels(input));
 
         System.out.print("Which task would you like to run? ");
         int taskNum = scan.nextInt();
 
         switch (taskNum) {
             case 1:
-                String somethingInTheWay = couplet1() + chorus() + couplet2() + chorus();
-                System.out.printf(somethingInTheWay);
+                String lyrics = couplet1() + chorus() + couplet2() + chorus();
+                System.out.printf(lyrics);
                 break;
 
             case 2:
@@ -27,7 +20,7 @@ public class Functions {
                 System.out.println(theMiddle);
                 break;
 
-            case 4:
+            case 3:
                 System.out.print("Input shape: ");
                 String input = scan.next();
 
@@ -54,14 +47,29 @@ public class Functions {
                     }
                 }
                 break;
+
+            case 4:
+                System.out.print("Input investment amount: ");
+                double amount = scan.nextDouble();
+                System.out.print("Input interest rate in percent: ");
+                double rate = scan.nextDouble() / 100;
+                System.out.print("Input years: ");
+                int years = scan.nextInt();
+                System.out.printf("The amount after %d years wiil be %.2f", years, futureValue(amount, rate, years));
+                break;
+
+            case 5:
+                System.out.print("Input password: ");
+                String pass = scan.next();
+                String output = isValid(pass) ? "Valid." : "Not valid.";
+                System.out.println(output);
+                break;
+
             default:
+                System.out.println("No such task.");
                 break;
         }
     }
-
-    // public static double average(double num1, double num2) {
-    // return (num1 + num2) / 2;
-    // }
 
     // public static String countVowels(String input) {
     // String vowels = "aeiou";
@@ -76,59 +84,42 @@ public class Functions {
     // }
 
     static String couplet1() {
-        String couplet = 
-        "%nI've nothing much to offer%n" +
-        "There's nothing much to take%n" +
-        "I'm an absolute beginner%n" +
-        "But I'm absolutely sane%n" +
-        "As long as we're together%n" +
-        "The rest can go to hell%n" +
-        "I absolutely love you%n" +
-        "But we're absolute beginners%n" +
-        "With eyes completely open%n" +
-        "But nervous all the same%n";
+        String couplet = "%nI've nothing much to offer%n" +
+                "There's nothing much to take%n" +
+                "I'm an absolute beginner%n" +
+                "But I'm absolutely sane%n" +
+                "As long as we're together%n" +
+                "The rest can go to hell%n" +
+                "I absolutely love you%n" +
+                "But we're absolute beginners%n" +
+                "With eyes completely open%n" +
+                "But nervous all the same%n";
         return couplet;
     }
 
     static String couplet2() {
-        String couplet = 
-        "%nNothing much could happen%n" +
-        "Nothing we can't shake%n" +
-        "Oh, we're absolute beginners%n" +
-        "With nothing much at stake%n" +
-        "As long as you're still smiling%n" +
-        "There's nothing more I need%n" +
-        "I absolutely love you%n" +
-        "But we're absolute beginners%n" +
-        "But if my love is your love%n" +
-        "We're certain to succeed%n";
+        String couplet = "%nNothing much could happen%n" +
+                "Nothing we can't shake%n" +
+                "Oh, we're absolute beginners%n" +
+                "With nothing much at stake%n" +
+                "As long as you're still smiling%n" +
+                "There's nothing more I need%n" +
+                "I absolutely love you%n" +
+                "But we're absolute beginners%n" +
+                "But if my love is your love%n" +
+                "We're certain to succeed%n";
         return couplet;
     }
 
-    static String chorus1() {
-        String output = "";
-        String secondLine = "%nMmm-mmm";
-        for (int i = 0; i < 6; i++) {
-            String firstLine = "%nSomething in the way";
-            if (i % 2 == 1) {
-                firstLine += ", yeah";
-            }
-            output += firstLine;
-            output += secondLine;
-        }
-        return output + "%n";
-    }
-
     static String chorus() {
-        return
-        "%nIf our love song%n" +
-        "Could fly over mountains%n" +
-        "Could laugh at the ocean%n" +
-        "Just like the films%n" +
-        "There's no reason%n" +
-        "To feel all the hard times%n" +
-        "To lay down the hard lines%n" +
-        "It's absolutely true%n"''
+        return "%nIf our love song%n" +
+                "Could fly over mountains%n" +
+                "Could laugh at the ocean%n" +
+                "Just like the films%n" +
+                "There's no reason%n" +
+                "To feel all the hard times%n" +
+                "To lay down the hard lines%n" +
+                "It's absolutely true%n";
     }
 
     static String theMiddle(String input) {
@@ -146,5 +137,17 @@ public class Functions {
 
     static double area(double a) {
         return Math.PI * a * a;
+    }
+
+    private static double futureValue(double amount, double rate, int years) {
+        return amount * (Math.pow((1 + rate), years));
+    }
+
+    private static boolean isValid(String input) {
+        String quote = //Pattern.quote(
+            "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@#$%^&(){}:;<>,.?~_+-=]).{8,}$";
+        Pattern pattern = Pattern.compile(quote);
+        Matcher matcher = pattern.matcher(input);
+        return matcher.find();
     }
 }
