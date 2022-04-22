@@ -7,6 +7,10 @@
         {
             "type": "java",
             "name": "Launch Current File",
+            // "args": [
+            //     "-G"
+            // ],
+            // "vmArgs": "--foo arg1 --bar arg2",
             "request": "launch",
             "mainClass": "${file}"
         },

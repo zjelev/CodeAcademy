@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Lesson13 {
+public class FunctionsExercise {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.print("Which task would you like to run? ");
