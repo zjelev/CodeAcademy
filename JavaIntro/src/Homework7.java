@@ -23,11 +23,11 @@ public class Homework7 {
         if (isCorrect) {
             if (month == 3 && day >= 20) {
                 isSpring = true;
-            } else if ((month == 4 && day <= 30 ) || month == 5) {
+            } else if ((month == 4 && day <= 30) || month == 5) {
                 isSpring = true;
             } else if (month == 6 && day <= 20) {
                 isSpring = true;
-            } 
+            }
             System.out.println(isSpring);
         } else {
             System.out.println("Incorrect input!");
@@ -38,34 +38,34 @@ public class Homework7 {
         double mass = scanner.nextDouble();
         System.out.println("Input height in m: ");
         double height = scanner.nextDouble();
-        if (mass > 0 && height > 0 ) {
-        double bmi = mass / (height * height);
-        if (bmi < 16) {
-        System.out.println("Underweight (Severe thinness)");
-        } else if (bmi < 17 ) {
-        System.out.println("Underweight (Moderate thinness)");
-        } else if (bmi < 18.5 ) {
-        System.out.println("Underweight (Mild thinness)");
-        } else if (bmi < 25) {
-        System.out.println("Normal range");
-        } else if (bmi < 30) {
-        System.out.println("Overweight (Pre-obese)");
-        } else if (bmi < 35) {
-        System.out.println("Obese (Class I)");
-        } else if (bmi < 40) {
-        System.out.println("Obese (Class II)");
+        if (mass > 0 && height > 0) {
+            double bmi = mass / (height * height);
+            if (bmi < 16) {
+                System.out.println("Underweight (Severe thinness)");
+            } else if (bmi < 17) {
+                System.out.println("Underweight (Moderate thinness)");
+            } else if (bmi < 18.5) {
+                System.out.println("Underweight (Mild thinness)");
+            } else if (bmi < 25) {
+                System.out.println("Normal range");
+            } else if (bmi < 30) {
+                System.out.println("Overweight (Pre-obese)");
+            } else if (bmi < 35) {
+                System.out.println("Obese (Class I)");
+            } else if (bmi < 40) {
+                System.out.println("Obese (Class II)");
+            } else {
+                System.out.println("Obese (Class III)");
+            }
         } else {
-        System.out.println("Obese (Class III)");
-        }
-        } else {
-        System.out.println("Incorrect input!");
+            System.out.println("Incorrect input!");
         }
 
         // 3
         if (day % 2 == 0) {
-        System.out.println("Day is even");
+            System.out.println("Day is even");
         } else {
-        System.out.println("Day is odd");
+            System.out.println("Day is odd");
         }
 
         // 4
