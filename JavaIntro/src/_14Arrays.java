@@ -5,28 +5,9 @@ public class _14Arrays {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        // Lection
         double[] original = { 15, 13.2, 0.000125, -6, 2.36, 12345.654987, 20.6, 12.58, -6,
                 2.36, -6, 568.32, 12.5, 0, -100000, 12345.654987, 0.000125, 15 };
-        System.out.println(Arrays.toString(original));
-        // System.out.println(calcAverage(original));
-
-        double[][] grades = {
-                // A B C D
-                { 6, 3, 2, 4 },
-                { 5, 3, 6, 4 },
-                { 6, 3, 5, 5 },
-                { 3, 3, 4, 6 }
-        };
-
-        double[] math = new double[grades[0].length];
-        for (int i = 0; i < grades[0].length; i++) {
-            math[i] = grades[0][i];
-        }
-        // System.out.println(Arrays.toString(math));
-        // System.out.println("Average math grade is " + calcAverage(math));
-
-        // Homework
+        
         // 1 - Remove certain value
         System.out.print("Task 1 - Input value to be removed: ");
         double toRemove = scan.nextDouble();
@@ -184,13 +165,5 @@ public class _14Arrays {
         }
 
         return trimArray(removedValueTemp, newArrIndex);
-    }
-
-    private static double calcAverage(double[] original) {
-        double total = 0;
-        for (int i = 0; i < original.length; i++) {
-            total += original[i];
-        }
-        return total / original.length;
     }
 }
